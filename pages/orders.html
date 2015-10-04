@@ -1,0 +1,23 @@
+<div class="row ">
+</div>
+
+<div class="row orders-row">
+  <div class="col-md-offset-2 col-md-8">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Contact Number</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat = "detail in showDetails">
+          <td>{{detail.amount}}</td>
+          <td>{{detail.contactNumber}}</td>
+          <td>{{detail.address}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

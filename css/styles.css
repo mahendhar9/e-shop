@@ -5,4 +5,10 @@
   .form-row .save-btn {
     width: 100%; }
 
+.orders-row {
+  margin-top: 150px;
+  text-align: center; }
+  .orders-row th {
+    text-align: center; }
+
 /*# sourceMappingURL=styles.css.map */
