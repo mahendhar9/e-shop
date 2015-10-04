@@ -1,5 +1,6 @@
-var eshopApp = angular.module('eshopApp', ['ui.router']);
+var eshopApp = angular.module('eshopApp', ['ui.router', 'ngStorage']);
 
+//Routes
 eshopApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
  $urlRouterProvider.otherwise("/");
   $stateProvider
@@ -12,9 +13,28 @@ eshopApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
     url: "/orders",
     templateUrl: "pages/orders.html"
   })
-
 }]);
 
-eshopApp.controller('homeCtrl', ['$scope', function($scope) {
+// Service for LocalStorage
+eshopApp.service('localStorageService', ['$localStorage', function($localStorage) {
+  var localStorageService = this;
+  var storage = $localStorage;
+  storage.details = storage.details || [];
+  localStorageService.details = storage.details
+}]);
+
+//Controller for Home page
+eshopApp.controller('homeCtrl', ['$scope', '$state', 'localStorageService', function($scope, $state, localStorageService) {
+
+  $scope.showDetails = localStorageService.details;
+  $scope.orderDetails = function() {
+    // $state.go('orders');
+    var newDetails = {
+      amount: $scope.amount,
+      contactNumber: $scope.contactNumber,
+      address: $scope.address
+    };
+    localStorageService.details.push(newDetails);
+  };
 
 }]);
