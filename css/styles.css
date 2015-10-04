@@ -5,8 +5,13 @@
   .form-row .save-btn {
     width: 100%; }
 
+.search-row {
+  margin-top: 150px; }
+  .search-row .search-text {
+    text-align: center; }
+
 .orders-row {
-  margin-top: 150px;
+  margin-top: 50px;
   text-align: center; }
   .orders-row th {
     text-align: center; }

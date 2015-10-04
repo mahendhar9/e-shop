@@ -8,8 +8,16 @@
   }
 }
 
+.search-row {
+ margin-top: 150px;
+
+ .search-text {
+ text-align: center; 
+ }
+}
+
 .orders-row {
-  margin-top: 150px;
+  margin-top: 50px;
   text-align: center;
 
   th {
