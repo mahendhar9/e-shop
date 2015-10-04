@@ -16,11 +16,19 @@
       </thead>
       <tbody>
         <tr ng-repeat = "detail in showDetails | filter:search">
-          <td>{{detail.amount}}</td>
-          <td>{{detail.contactNumber}}</td>
-          <td>{{detail.address}}</td>
+          <td><input type="number" class="form-control edit-form" ng-model = "detail.amount"></td>
+          <td><input type="number" class="form-control edit-form" ng-model = "detail.contactNumber"></td>
+          <td><textarea class="form-control edit-form" rows="2" ng-model = "detail.address"></textarea></td>
         </tr>
       </tbody>
     </table>
+    <br/>
+    <div class="alert alert-info">
+      <strong>Note: </strong> Click on a field to edit it.
+    </div>
+    <br/> <p class = "details-data">When edited, the LocalStorage is automatically updated : {{showDetails}}</p>
   </div>
+
 </div>
+
+
